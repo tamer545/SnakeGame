@@ -1,6 +1,9 @@
 package gui;
 
+import actions.KeyHandler;
+
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicTreeUI;
 
 public class Gui {
     private JFrame jf;
@@ -15,6 +18,7 @@ public class Gui {
         jf.setLocationRelativeTo(null);
         jf.setLayout(null);
         jf.setResizable(false);
+        jf.addKeyListener(new KeyHandler());
 
         draw = new Draw();
         draw.setBounds(0, 0, width, height);

@@ -1,8 +1,13 @@
 package game;
 
+import actions.Collision;
 import gui.Gui;
 
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Snake {
@@ -15,6 +20,7 @@ public class Snake {
     public static ArrayList<Tail> tails = new ArrayList<>();
 
     public static PickUp pickUp = new PickUp();
+
 
     public static void addTail() {
         if (tails.size() < 1) {
@@ -69,6 +75,19 @@ public class Snake {
         point.y = y * 32 + Gui.yoff;
 
         return point;
+    }
+
+    public static void writeFile() throws IOException {
+
+        String file = "C:\\Users\\timoa\\OneDrive\\Desktop\\Snake Game HighScores\\" + bestScore;
+        FileWriter fileWriter = new FileWriter(file);
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        if (Collision.collideWall() || Collision.collideSelf()) {
+            bufferedWriter.write(bestScore);
+        }
+
+        bufferedWriter.close();
+        fileWriter.close();
     }
 
 

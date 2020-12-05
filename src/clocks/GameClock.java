@@ -9,7 +9,7 @@ public class GameClock extends Thread {
     public void run() {
         while (running) {
             try {
-                sleep(200);
+                sleep(Collision.getSleepTime());
                 Snake.move();
                 Snake.waitToMove = false;
                 Collision.collidePickUp();
@@ -17,7 +17,7 @@ public class GameClock extends Thread {
                     Snake.tails.clear();
                     Snake.score = 0;
                 }
-                if (Collision.collideWall()){
+                if (Collision.collideWall()) {
                     Snake.tails.clear();
                     Snake.head.setX(7);
                     Snake.head.setY(7);

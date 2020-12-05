@@ -38,7 +38,7 @@ public class Draw extends JLabel {
         g.setColor(Color.GRAY);
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {
-                g.drawRect(i * 32 + Gui.xoff, j * 32 + Gui.yoff, 32, 32);
+                //g.drawRect(i * 32 + Gui.xoff, j * 32 + Gui.yoff, 32, 32);
             }
         }
 

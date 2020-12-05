@@ -15,30 +15,30 @@ public class Draw extends JLabel {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
 
         //Draw background
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(new Color(0, 120, 180));
         g.fillRect(0, 0, Gui.width, Gui.height);
 
         //Draw Snake Tails
         g.setColor(new Color(51, 204, 51));
         for (int i = 0; i < Snake.tails.size(); i++) {
             p = Snake.ptc(Snake.tails.get(i).getX(), Snake.tails.get(i).getY());
-            g.fillRect(p.x, p.y, 32, 32);
+            g.fillRect(p.x, p.y, 20, 20);
         }
         //Draw Snake Head
-        g.setColor(new Color(0, 173, 0));
+        g.setColor(new Color(0, 150, 0));
         p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
-        g.fillRect(p.x, p.y, 32, 32);
+        g.fillRect(p.x, p.y, 20, 20);
 
         //Draw PickUp
         g.setColor(new Color(204, 51, 0));
         p = Snake.ptc(Snake.pickUp.getX(), Snake.pickUp.getY());
-        g.fillRect(p.x, p.y, 32, 32);
+        g.fillRect(p.x, p.y, 20, 20);
 
         //Draw grid
         g.setColor(Color.GRAY);
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                //g.drawRect(i * 32 + Gui.xoff, j * 32 + Gui.yoff, 32, 32);
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                //g.drawRect(i * 20 + Gui.xoff, j * 20 + Gui.yoff, 20, 20);
             }
         }
 

@@ -6,11 +6,15 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Snake {
+    public static int score = 0, bestScore = 0;
 
     public static boolean waitToMove;
 
     public static Head head = new Head(7, 7);
+
     public static ArrayList<Tail> tails = new ArrayList<>();
+
+    public static PickUp pickUp = new PickUp();
 
     public static void addTail() {
         if (tails.size() < 1) {

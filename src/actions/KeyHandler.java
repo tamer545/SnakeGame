@@ -1,5 +1,6 @@
 package actions;
 
+import clocks.GameClock;
 import game.Direction;
 import game.Snake;
 
@@ -38,6 +39,16 @@ public class KeyHandler implements KeyListener {
                     Snake.head.setDirection(Direction.RIGHT);
                     Snake.waitToMove = true;
                 }
+                break;
+            case KeyEvent.VK_5:
+                Collision.sleepTime = 400 - Snake.score*2;
+                break;
+            case KeyEvent.VK_6:
+            case KeyEvent.VK_9:
+                Collision.sleepTime = 200 - Snake.score*2;
+                break;
+            case KeyEvent.VK_8:
+                Collision.sleepTime = 999999999;
                 break;
         }
 

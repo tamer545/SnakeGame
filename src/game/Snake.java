@@ -85,9 +85,10 @@ public class Snake {
         if (Collision.collideWall() || Collision.collideSelf()) {
             bufferedWriter.write(bestScore);
         }
-
         bufferedWriter.close();
         fileWriter.close();
+
+
     }
 
 

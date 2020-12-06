@@ -4,7 +4,7 @@ import clocks.GameClock;
 import game.Snake;
 
 public class Collision {
-    private static int sleepTime = 200;
+    public static int sleepTime = 200;
 
     public static boolean collideSelf() {
         for (int i = 0; i < Snake.tails.size(); i++) {

@@ -15,6 +15,7 @@ public class GameClock extends Thread {
                 Snake.move();
                 Snake.waitToMove = false;
                 Collision.collidePickUp();
+
                 if (Collision.collideSelf()) {
                     Snake.writeFile();
                     Snake.tails.clear();

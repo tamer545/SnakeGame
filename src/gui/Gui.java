@@ -3,7 +3,6 @@ package gui;
 import actions.KeyHandler;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicTreeUI;
 
 public class Gui {
     private JFrame jf;

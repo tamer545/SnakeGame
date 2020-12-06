@@ -14,6 +14,7 @@ public class Draw extends JLabel {
 
     Point p;
     Point p2;
+
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
@@ -68,7 +69,6 @@ public class Draw extends JLabel {
         g.drawString("3: Ultra-Slow Mode", 5, 175);
         g.drawString("4: Add a Tail ", 5, 225);
         g.drawString("5: Double-Food Mode", 5, 275);
-        g.drawString("6: Double-Food Mode off", 5, 325);
         g.drawString("9: Standard-Mode", 5, 375);
 
 

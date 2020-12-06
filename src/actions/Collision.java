@@ -1,6 +1,5 @@
 package actions;
 
-import clocks.GameClock;
 import game.Snake;
 
 public class Collision {
@@ -28,13 +27,24 @@ public class Collision {
     public static void collidePickUp() {
         if (Snake.head.getX() == Snake.pickUp.getX() && Snake.head.getY() == Snake.pickUp.getY()) {
             Snake.pickUp.reset();
-            Snake.addTail();
-            Snake.score += 1;
-            sleepTime -= 2;
+            pickUp();
+        }
+    }
 
-            if (Snake.score > Snake.bestScore) {
-                Snake.bestScore = Snake.score;
-            }
+    public static void collideSecondPickUp() {
+        if (Snake.head.getX() == Snake.pickUp.getX2() && Snake.head.getY() == Snake.pickUp.getY2()) {
+            Snake.pickUp.resetDoubleFoodMode();
+            pickUp();
+        }
+    }
+
+    public static void pickUp() {
+        Snake.addTail();
+        Snake.score += 1;
+        sleepTime -= 2;
+
+        if (Snake.score > Snake.bestScore) {
+            Snake.bestScore = Snake.score;
         }
     }
 

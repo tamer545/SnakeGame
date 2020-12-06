@@ -82,9 +82,9 @@ public class Snake {
         String file = "C:\\Users\\timoa\\OneDrive\\Desktop\\Snake Game HighScores\\" + bestScore;
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-        if (Collision.collideWall() || Collision.collideSelf()) {
-            bufferedWriter.write(bestScore);
-        }
+
+        bufferedWriter.write(bestScore);
+
         bufferedWriter.close();
         fileWriter.close();
 

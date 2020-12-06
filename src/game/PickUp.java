@@ -1,13 +1,21 @@
 package game;
 
+import actions.KeyHandler;
+
 import java.util.concurrent.ThreadLocalRandom;
 
 public class PickUp {
     int x, y;
+    int x2, y2;
 
     public PickUp() {
         this.x = ThreadLocalRandom.current().nextInt(0, 15);
         this.y = ThreadLocalRandom.current().nextInt(0, 15);
+
+        if (KeyHandler.isDoubleFoodModeOn) {
+            this.x2 = ThreadLocalRandom.current().nextInt(0, 15);
+            this.y2 = ThreadLocalRandom.current().nextInt(0, 15);
+        }
 
     }
 
@@ -16,12 +24,25 @@ public class PickUp {
         this.y = ThreadLocalRandom.current().nextInt(0, 15);
     }
 
+    public void resetDoubleFoodMode() {
+        this.x2 = ThreadLocalRandom.current().nextInt(0, 15);
+        this.y2 = ThreadLocalRandom.current().nextInt(0, 15);
+    }
+
     public int getX() {
         return x;
     }
 
+    public int getX2() {
+        return x2;
+    }
+
     public int getY() {
         return y;
+    }
+
+    public int getY2() {
+        return y2;
     }
 
 }

@@ -51,6 +51,13 @@ public class Draw extends JLabel {
         g.drawString("Score: " + Snake.score, 5, 25);
         g.drawString("Highscore: " + Snake.bestScore, 655, 25);
 
+        //Draw Shortcuts
+        g.setFont(new Font("Arial", Font.ITALIC, 13));
+        g.drawString("1: Ultra-Fast Mode", 5, 75);
+        g.drawString("2: Slow-Mode", 5, 125);
+        g.drawString("3: Ultra-Slow Mode", 5, 175);
+        g.drawString("9: Standard-Mode", 5, 225);
+
         repaint();
     }
 }

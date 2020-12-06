@@ -40,16 +40,19 @@ public class KeyHandler implements KeyListener {
                     Snake.waitToMove = true;
                 }
                 break;
-            case KeyEvent.VK_5:
-                Collision.sleepTime = 400 - Snake.score*2;
+            case KeyEvent.VK_1:
+                Collision.sleepTime = 50 - Snake.score * 2;
                 break;
-            case KeyEvent.VK_6:
+            case KeyEvent.VK_2:
+                Collision.sleepTime = 400 - Snake.score * 2;
+                break;
+            case KeyEvent.VK_3:
+                Collision.sleepTime = 999 - Snake.score * 2;
+                break;
             case KeyEvent.VK_9:
-                Collision.sleepTime = 200 - Snake.score*2;
+                Collision.sleepTime = 200 - Snake.score * 2;
                 break;
-            case KeyEvent.VK_8:
-                Collision.sleepTime = 999999999;
-                break;
+
         }
 
     }

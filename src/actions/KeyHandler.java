@@ -48,6 +48,9 @@ public class KeyHandler implements KeyListener {
                     Snake.waitToMove = true;
                 }
                 break;
+            case KeyEvent.VK_0:
+                Collision.sleepTime = 100 - Snake.score * 2;
+                break;
             case KeyEvent.VK_1:
                 Collision.sleepTime = 50 - Snake.score * 2;
                 break;
@@ -63,9 +66,6 @@ public class KeyHandler implements KeyListener {
                 break;
             case KeyEvent.VK_5:
                 isDoubleFoodModeOn = true;
-                break;
-            case KeyEvent.VK_6:
-                isDoubleFoodModeOn = false;
                 break;
             case KeyEvent.VK_9:
                 Collision.sleepTime = 200 - Snake.score * 2;

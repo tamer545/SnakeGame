@@ -64,11 +64,12 @@ public class Draw extends JLabel {
 
         //Draw Shortcuts
         g.setFont(new Font("Arial", Font.ITALIC, 13));
-        g.drawString("1: Ultra-Fast Mode", 5, 75);
-        g.drawString("2: Slow-Mode", 5, 125);
-        g.drawString("3: Ultra-Slow Mode", 5, 175);
-        g.drawString("4: Add a Tail ", 5, 225);
-        g.drawString("5: Double-Food Mode", 5, 275);
+        g.drawString("0: Fast Mode", 5, 75);
+        g.drawString("1: Ultra-Fast Mode", 5, 125);
+        g.drawString("2: Slow-Mode", 5, 175);
+        g.drawString("3: Ultra-Slow Mode", 5, 225);
+        g.drawString("4: Add a Tail ", 5, 275);
+        g.drawString("5: Double-Food Mode", 5, 325);
         g.drawString("9: Standard-Mode", 5, 375);
 
 

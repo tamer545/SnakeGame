@@ -3,14 +3,17 @@ package gui;
 import actions.KeyHandler;
 import game.Snake;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class Draw extends JLabel {
 
     Point p;
     Point p2;
-
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;

@@ -60,10 +60,6 @@ public class KeyHandler implements KeyListener {
             case KeyEvent.VK_3:
                 Collision.sleepTime = 999 - Snake.score * 2;
                 break;
-            case KeyEvent.VK_4:
-                Snake.addTail();
-                Snake.score++;
-                break;
             case KeyEvent.VK_5:
                 isDoubleFoodModeOn = true;
                 break;

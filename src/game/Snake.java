@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Snake {
-    public static int score = 0, bestScore = 0;
+    public static int score = 0, bestScore = 77;
 
     public static boolean waitToMove;
 
@@ -84,7 +84,6 @@ public class Snake {
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
         bufferedWriter.write(bestScore);
-
         bufferedWriter.close();
         fileWriter.close();
 

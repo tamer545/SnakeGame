@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Snake {
-    public static int score = 0, bestScore = 77;
+    public static int score = 0, bestScore = 85;
 
     public static boolean waitToMove;
 

@@ -7,6 +7,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PickUp {
     int x, y;
     int x2, y2;
+    int x3, y3;
+    int x4, y4;
+    int x5, y5;
 
     public PickUp() {
         this.x = ThreadLocalRandom.current().nextInt(0, 15);
@@ -16,7 +19,6 @@ public class PickUp {
             this.x2 = ThreadLocalRandom.current().nextInt(0, 15);
             this.y2 = ThreadLocalRandom.current().nextInt(0, 15);
         }
-
     }
 
     public void reset() {
@@ -33,12 +35,12 @@ public class PickUp {
         return x;
     }
 
-    public int getX2() {
-        return x2;
-    }
-
     public int getY() {
         return y;
+    }
+
+    public int getX2() {
+        return x2;
     }
 
     public int getY2() {

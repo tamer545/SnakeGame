@@ -3,6 +3,7 @@ package actions;
 import clocks.GameClock;
 import game.Direction;
 import game.Snake;
+import gui.Draw;
 
 import javax.swing.*;
 import java.awt.*;
@@ -65,18 +66,18 @@ public class KeyHandler implements KeyListener {
             case KeyEvent.VK_4:
                 isDoubleFoodModeOn = true;
                 break;
-            case KeyEvent.VK_5:
-                isThinModeOn = true;
-                isThickModeOn = false;
-                break;
             case KeyEvent.VK_6:
-                isThickModeOn = true;
+                isThickModeOn = false;
+                isThinModeOn = true;
+                Draw.snakeThickness = 20;
+                break;
+            case KeyEvent.VK_7:
                 isThinModeOn = false;
+                isThickModeOn = true;
+                Draw.snakeThickness = 32;
                 break;
             case KeyEvent.VK_9:
                 Collision.sleepTime = 200 - Snake.score * 2;
-                isDoubleFoodModeOn = false;
-
                 break;
 
 

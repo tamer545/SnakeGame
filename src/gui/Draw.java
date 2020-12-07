@@ -3,12 +3,9 @@ package gui;
 import actions.KeyHandler;
 import game.Snake;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+
 
 public class Draw extends JLabel {
 
@@ -52,7 +49,7 @@ public class Draw extends JLabel {
         }
 
         //Draw grid
-        if (KeyHandler.isThickModeOn) {
+        if (snakeThickness == 32) {
             g.setColor(Color.GRAY);
             for (int i = 0; i < 16; i++) {
                 for (int j = 0; j < 16; j++) {
@@ -63,7 +60,9 @@ public class Draw extends JLabel {
 
         //Draw border
         g.setColor(Color.BLACK);
-        g.drawRect(Gui.xoff, Gui.yoff, 512, 512);
+        if (!KeyHandler.isNoneBorderModeOn) {
+            g.drawRect(Gui.xoff, Gui.yoff, 512, 512);
+        }
 
         //Draw Score
         g.setFont(new Font("Arial", Font.BOLD, 20));
@@ -77,9 +76,11 @@ public class Draw extends JLabel {
         g.drawString("2: Slow-Mode", 5, 175);
         g.drawString("3: Ultra-Slow Mode", 5, 225);
         g.drawString("4: Double-Food Mode", 5, 275);
+        g.drawString("5: None-Border Mode", 5, 325);
         g.drawString("6: Thin-Snake Mode", 5, 375);
-        g.drawString("7: Thick-Snake Mode", 5, 425);
-        g.drawString("9: Standard-Mode", 5, 475);
+        g.drawString("7: Extreme-Thin-Snake Mode", 5, 425);
+        g.drawString("8: Thick-Snake Mode", 5, 475);
+        g.drawString("9: Standard-Mode", 5, 525);
 
 
         repaint();

@@ -79,13 +79,13 @@ public class Snake {
 
     public static void writeFile() throws IOException {
 
-        String file = "C:\\Users\\timoa\\OneDrive\\Desktop\\Snake Game HighScores\\" + bestScore;
+       /* String file = "C:\\Users\\timoa\\OneDrive\\Desktop\\Snake Game HighScores\\" + bestScore;
         FileWriter fileWriter = new FileWriter(file);
         BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
         bufferedWriter.write(bestScore);
         bufferedWriter.close();
-        fileWriter.close();
+        fileWriter.close();*/
 
 
     }

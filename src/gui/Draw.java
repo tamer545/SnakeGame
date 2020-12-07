@@ -14,6 +14,16 @@ public class Draw extends JLabel {
 
     Point p;
     Point p2;
+    int snakeThickness;
+
+    private int getSnakeThickness() {
+        if (KeyHandler.isThickModeOn) {
+            snakeThickness = 32;
+        } else {
+            snakeThickness = 20;
+        }
+        return snakeThickness;
+    }
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -28,28 +38,30 @@ public class Draw extends JLabel {
         g.setColor(new Color(115, 199, 245));
         for (int i = 0; i < Snake.tails.size(); i++) {
             p = Snake.ptc(Snake.tails.get(i).getX(), Snake.tails.get(i).getY());
-            g.fillRect(p.x, p.y, 20, 20);
+            g.fillRect(p.x, p.y, getSnakeThickness(), getSnakeThickness());
         }
         //Draw Snake Head
         g.setColor(new Color(66, 135, 245));
         p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
-        g.fillRect(p.x, p.y, 20, 20);
+        g.fillRect(p.x, p.y, getSnakeThickness(), getSnakeThickness());
 
         //Draw PickUp
         g.setColor(new Color(0, 0, 0));
         p = Snake.ptc(Snake.pickUp.getX(), Snake.pickUp.getY());
         p2 = Snake.ptc(Snake.pickUp.getX2(), Snake.pickUp.getY2());
-        g.fillRect(p.x, p.y, 20, 20);
+        g.fillRect(p.x, p.y, getSnakeThickness(), getSnakeThickness());
 
         if (KeyHandler.isDoubleFoodModeOn) {
             g.fillRect(p2.x, p2.y, 32, 32);
         }
 
         //Draw grid
-        g.setColor(Color.GRAY);
-        for (int i = 0; i < 16; i++) {
-            for (int j = 0; j < 16; j++) {
-                //g.drawRect(i * 32 + Gui.xoff, j * 32 + Gui.yoff, 32, 32);
+        if (KeyHandler.isThickModeOn) {
+            g.setColor(Color.GRAY);
+            for (int i = 0; i < 16; i++) {
+                for (int j = 0; j < 16; j++) {
+                    g.drawRect(i * 32 + Gui.xoff, j * 32 + Gui.yoff, 32, 32);
+                }
             }
         }
 
@@ -69,7 +81,9 @@ public class Draw extends JLabel {
         g.drawString("2: Slow-Mode", 5, 175);
         g.drawString("3: Ultra-Slow Mode", 5, 225);
         g.drawString("4: Double-Food Mode", 5, 275);
-        g.drawString("9: Standard-Mode", 5, 325);
+        g.drawString("5: Thin-Snake Mode", 5, 325);
+        g.drawString("6: Thick-Snake Mode", 5, 375);
+        g.drawString("9: Standard-Mode", 5, 425);
 
 
         repaint();

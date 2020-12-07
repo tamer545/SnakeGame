@@ -11,6 +11,8 @@ import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
     public static boolean isDoubleFoodModeOn = false;
+    public static boolean isThinModeOn = true;
+    public static boolean isThickModeOn = false;
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -60,12 +62,21 @@ public class KeyHandler implements KeyListener {
             case KeyEvent.VK_3:
                 Collision.sleepTime = 999 - Snake.score * 2;
                 break;
-            case KeyEvent.VK_5:
+            case KeyEvent.VK_4:
                 isDoubleFoodModeOn = true;
+                break;
+            case KeyEvent.VK_5:
+                isThinModeOn = true;
+                isThickModeOn = false;
+                break;
+            case KeyEvent.VK_6:
+                isThickModeOn = true;
+                isThinModeOn = false;
                 break;
             case KeyEvent.VK_9:
                 Collision.sleepTime = 200 - Snake.score * 2;
                 isDoubleFoodModeOn = false;
+
                 break;
 
 
